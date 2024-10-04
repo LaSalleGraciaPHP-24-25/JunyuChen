@@ -45,7 +45,5 @@ abstract class Item implements Naming {
         $this->isNew = $isNew;
     }
 
-    public function calcPriceWithTax() {
-        return $this->price * 1.21;
-    }
+    abstract public function calcPriceWithTax();
 }
