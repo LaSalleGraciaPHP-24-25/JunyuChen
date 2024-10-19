@@ -1,5 +1,7 @@
 <?php
 
+require_once 'Naming.php';
+
 abstract class Item implements Naming {
     protected $name;
     protected $weight;

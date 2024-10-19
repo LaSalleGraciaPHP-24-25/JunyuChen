@@ -14,7 +14,7 @@ Class Drink extends Extendable implements Naming {
         $this->volume = $volume;
 
         if ($this->isAlholic) {
-            $this->tax = 1.20;
+            $this->tax = 21;
         }
     }
 
@@ -22,8 +22,11 @@ Class Drink extends Extendable implements Naming {
         return $this->isAlcoholic;
     }
 
-    public function setIsAlcoholic(bool $isAlcoholic) {
+    public function setIsAlcoholic($isAlcoholic) {
         $this->isAlcoholic = $isAlcoholic;
+        if ($this->isAlcoholic) {
+            $this->tax = 21;
+        }
     }
 
     public function getVolume() {

@@ -2,6 +2,6 @@
 
 interface Naming {
     public function getName();
-    public function setName();
-    public function _toString();
+    public function setName($name);
+    public function __toString();
 }
