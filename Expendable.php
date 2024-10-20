@@ -12,11 +12,11 @@ class Expendable extends Item implements Naming {
         Weight: " . $this->weight . "
         Price: " . $this->price . "
         Is New: " . ($this->isNew ? 'Yes' : 'No') . "
-        Expire Date: " . $this->expireDate . "
+        Expire Date: " . $this->expirationDate . "
         Tax: " . $this->tax . "%";
     }
 
-    public function __construct(string $name, float $weight, float $price, bool $isNew, string $expirationDate, $tax) {
+    public function __construct($name, $weight, $price, $isNew, $expirationDate, $tax) {
         parent::__construct($name, $weight, $price, $isNew);
         $this->expirationDate = $expirationDate;
         $this->tax = $tax;
@@ -28,6 +28,6 @@ class Expendable extends Item implements Naming {
 
     public function isExpired() {
         $currentDate = date('Y-m-d');
-        return $currentDate > $this->expireDate;
+        return $currentDate > $this->expirationDate;
     }
 }

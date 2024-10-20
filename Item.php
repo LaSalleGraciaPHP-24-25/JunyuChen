@@ -8,7 +8,7 @@ abstract class Item implements Naming {
     protected $price;
     protected $isNew;
 
-    protected function __construct(string $name, float $weight, float $price, bool $isNew) {
+    protected function __construct($name, $weight, $price, $isNew) {
         $this->name = $name;
         $this->weight = $weight;
         $this->price = $price;
@@ -19,7 +19,7 @@ abstract class Item implements Naming {
         return $this->name;
     }
 
-    public function setName(string $name) {
+    public function setName($name) {
         $this->name = $name;
     }
 
@@ -27,7 +27,7 @@ abstract class Item implements Naming {
         return $this->weight;
     }
 
-    public function setWeight(float $weight) {
+    public function setWeight($weight) {
         $this->weight = $weight;
     }
 
@@ -35,7 +35,7 @@ abstract class Item implements Naming {
         return $this->price;
     }
 
-    public function setPrice(float $price) {
+    public function setPrice($price) {
         $this->price = $price;
     }
 
@@ -43,7 +43,7 @@ abstract class Item implements Naming {
         return $this->isNew;
     }
 
-    public function setIsNew(bool $isNew) {
+    public function setIsNew($isNew) {
         $this->isNew = $isNew;
     }
 

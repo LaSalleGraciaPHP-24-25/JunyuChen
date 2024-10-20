@@ -3,16 +3,16 @@
 require_once 'Item.php';
 
 class NoExpendable extends Item implements Naming {
-    protected $warrantyDueDate;
-    protected $purchaseDate;
-    protected $tax = 21;
+    private $warrantyDueDate;
+    private $purchaseDate;
+    const TAX = 21;
 
     public function __toString() {
         return parent::__toString() . " Warranty Due Date: " . $this->warrantyDueDate . " Purchase Date: " . $this->purchaseDate;
     }
 
-    public function __construct(string $name, float $weight, float $price, bool $isNew, string $warrantyDueDate, string $purchaseDate) {
-        parent::__construct($name, $weight, $price, $isNew);
+    public function __construct($name, $weight, $price, $isNew, $warrantyDueDate, $purchaseDate, $tax = self::TAX) {
+        parent::__construct($name, $weight, $price, $isNew, $tax);
         $this->warrantyDueDate = NULL;
         $this->purchaseDate = $purchaseDate;
     }

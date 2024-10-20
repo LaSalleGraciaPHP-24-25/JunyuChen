@@ -1,19 +1,19 @@
 <?php
 
-Class Drink extends Extendable implements Naming {
-    protected $isAlcoholic;
-    protected $volume;
+Class Drink extends Expendable implements Naming {
+    private $isAlcoholic;
+    private $volume;
 
     public function __toString() {
         return parent::__toString() . " Is Alcoholic: " . $this->isAlcoholic . " Volume: " . $this->volume;
     }
 
-    public function __construct(string $name, float $weight, float $price, bool $isNew, string $expirationDate, bool $isAlcoholic, float $volume) {
-        parent::__construct($name, $weight, $price, $isNew, $expirationDate);
+    public function __construct($name, $weight, $price, $isNew, $expirationDate, $isAlcoholic, $volume, $tax = 10) {
+        parent::__construct($name, $weight, $price, $isNew, $expirationDate, $tax);
         $this->isAlcoholic = $isAlcoholic;
         $this->volume = $volume;
 
-        if ($this->isAlholic) {
+        if ($this->isAlcoholic) {
             $this->tax = 21;
         }
     }
